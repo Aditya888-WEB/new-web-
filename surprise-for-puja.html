@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, Puja!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Great Vibes', cursive;
+            background: linear-gradient(135deg, #ff9a9e, #fecfef, #ffecd2);
+            color: #c2185b;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            animation: fadeIn 2s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        header {
+            padding: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            margin: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4em;
+            color: #e91e63;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .heart {
+            position: absolute;
+            color: #ff1493;
+            font-size: 2.5em;
+            animation: float 8s ease-in-out infinite;
+            cursor: pointer;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+        .message {
+            font-size: 1.8em;
+            margin: 30px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            animation: slideUp 1s ease-out;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        iframe {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .gif {
+            width: 250px;
+            height: 200px;
+        }
+        .rose {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            margin: 30px auto;
+            cursor: pointer;
+            transition: all 1.5s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .rose.bloomed {
+            transform: scale(1.8) rotate(360deg);
+            background: linear-gradient(45deg, #ff1493, #dc143c);
+        }
+        #countdown {
+            font-size: 2.5em;
+            color: #e91e63;
+            font-weight: bold;
+        }
+        .love-meter {
+            width: 100%;
+            height: 40px;
+            background: #ffe6f2;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 30px auto;
+            max-width: 500px;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .love-fill {
+            height: 100%;
+            background: linear-gradient(to right, #ff69b4, #ff1493, #dc143c);
+            width: 0%;
+            animation: fill 4s ease-in-out forwards;
+        }
+        @keyframes fill {
+            to { width: 100%; }
+        }
+        .reasons li {
+            cursor: pointer;
+            list-style: none;
+            padding: 15px;
+            background: linear-gradient(45deg, #ffe6f2, #ffccdd);
+            margin: 10px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .reasons li:hover {
+            background: linear-gradient(45deg, #ffccdd, #ffb3ba);
+            transform: scale(1.05);
+        }
+        .game {
+            margin: 30px;
+        }
+        .game-heart {
+            font-size: 4em;
+            cursor: pointer;
+            display: inline-block;
+            margin: 15px;
+            transition: transform 0.3s ease;
+        }
+        .game-heart:hover {
+            transform: scale(1.2);
+        }
+        #proposalBtn {
+            font-size: 2.2em;
+            padding: 25px 50px;
+            background: linear-gradient(45deg, #e91e63, #f06292);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            font-family: inherit; /* Inherit font from body */
+        }
+        #proposalBtn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+        #proposalBtn:active {
+            transform: scale(0.95); /* Click effect */
+        }
+        .quiz {
+            margin: 30px;
+        }
+        .quiz button {
+            padding: 15px;
+            background: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .kiss {
+            font-size: 3em;
+            cursor: pointer;
+            margin: 30px;
+            transition: transform 0.5s ease;
+        }
+        .kiss:hover {
+            transform: scale(1.5);
+        }
+        footer {
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.1);
+            margin-top: 60px;
+            border-radius: 20px 20px 0 0;
+        }
+        .confetti {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #ff1493;
+            animation: fall 4s linear infinite;
+        }
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Happy Valentine's Day, Puja! 💖</h1>
+        <p>From Aditya, with all my love. You are my forever dream! 🌹</p>
+        <iframe src="https://giphy.com/embed/26BRv0ThflsHCqDrG" class="gif" frameBorder="0"></iframe> <!-- Cat kissing GIF -->
+    </header>
+
+    <div class="message">
+        <h2>My Love Letter to You</h2>
+        <p id="typewriter">Dear Puja, You are the light of my life, the beat in my heart, and the smile on my face. Every moment with you is a treasure. I love you more than words can say. Happy Valentine's! Will you be my forever? Yours forever, Aditya 💕</p>
+        <iframe src="https://giphy.com/embed/26BRv0ThflsHCqDrG" class="gif" frameBorder="0"></iframe> <!-- Romantic kiss GIF -->
+    </div>
+
+    <div class="message">
+        <h2>Your Smile (Click for Magic!)</h2>
+        <p>Your smile is my sunrise, my happiness, my everything. It lights up my darkest days! 😊</p>
+        <iframe src="https://giphy.com/embed/3o7TKz9bX9v8Z8Z8Z8" class="gif" frameBorder="0"></iframe> <!-- Smiling hearts GIF -->
+        <div class="kiss" onclick="virtualKiss()">💋 Kiss Me!</div>
+    </div>
+
+    <div class="message">
+        <h2>Why I Love You (Click to Reveal Romantic Secrets)</h2>
+        <ul class="reasons">
+            <li onclick="showReason('Your smile is my sunrise – it brightens my world every day! ☀️')">Your Smile</li>
+            <li onclick="showReason('Your laughter is music to my ears – it makes my heart dance! 🎶')">Your Laughter</li>
+            <li onclick="showReason('Your touch turns ordinary moments into magical memories! ✨')">Your Special Touch</li>
+            <li onclick="showReason('Your kindness fills my heart with endless joy and love! ❤️')">Your Kindness</li>
+            <li onclick="showReason('You understand me like no one else – you are my soulmate! 💑')">Your Understanding</li>
+        </ul>
+        <p id="reasonDisplay"></p>
+        <iframe id="secretIframe" src="https://giphy.com/embed/3o7TKz9bX9v8Z8Z8Z8" class="gif" frameBorder="0" style="font-family: inherit;"></iframe> <!-- Hugging GIF -->
+    </div>
+
+    <div class="message">
+        <h2>Our Love Meter</h2>
+        <div class="love-meter">
+            <div class="love-fill"></div>
+        </div>
+        <p>100% Pure, Eternal Love for You, Puja! Forever and always! 💞</p>
+    </div>
+
+    <div class="message">
+        <h2>Countdown to Valentine's</h2>
+        <div id="countdown"></div>
+        <iframe src="https://giphy.com/embed/3o7TKz9bX9v8Z8Z8Z8" class="gif" frameBorder="0"></iframe> <!-- Countdown hearts GIF -->
+    </div>
+
+    <div class="message">
+        <h2>Love Calculator</h2>
+        <input type="text" id="name1" placeholder="Your Name (Aditya)">
+        <input type="text" id="name2" placeholder="Her Name (Puja)">
+        <button onclick="calculateLove()">Calculate Our Love!</button>
+        <p id="result"></p>
+    </div>
+
+    <div class="message">
+        <h2>Heart-Clicking Game (Score Love Points!)</h2>
+        <div class="game">
+            <div class="game-heart" onclick="clickHeart()">❤️</div>
+            <div class="game-heart" onclick="clickHeart()">💖</div>
+            <div class="game-heart" onclick="clickHeart()">💕</div>
+            <div class="game-heart" onclick="clickHeart()">💗</div>
+        </div>
+        <p>Score: <span id="score">0</span> Love Points! Each click says 'I love you'! 💓</p>
+    </div>
+
+    <div class="message">
+        <h2>Love Quiz (Answer and See Our Compatibility!)</h2>
+        <div class="quiz">
+            <p>What is Puja's favorite color?</p>
+            <button onclick="quizAnswer('Pink')">Pink</button>
+            <button onclick="quizAnswer('Red')">Red</button>
+            <button onclick="quizAnswer('Blue')">Blue</button>
+            <p id="quizResult"></p>
+        </div>
+    </div>
+
+    <div class="message">
+        <h2>Click the Rose for a Magical Bloom!</h2>
+        <div class="rose" id="rose" onclick="bloomRose()"></div>
+        <p>Like our love, it blooms forever! 🌹</p>
+    </div>
+
+    <div class="message">
+        <button id="proposalBtn" onclick="propose()">Will You Be My Valentine Forever, Puja? 💍</button>
+    </div>
+
+    <footer>
+        <p>Made with endless ❤️ just for you, Puja. Click the floating hearts for sweet surprises!</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        // Confetti on load
+        confetti({ particleCount: 150, spread: 90, origin: { y: 0.6 } });
+
+        // Typewriter effect
+        const text = "Dear Puja, You are the light of my life, the beat in my heart, and the smile on my face. Every moment with you is a treasure. I love you more than words can say. Happy Valentine's! Will you be my forever? Yours forever, Aditya 💕";
+        let i = 0;
+        const speed = 120;
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        window.onload = function() {
+            typeWriter();
+        };
+
+        // Expandable reasons
+        function showReason(reason) {
+            document.getElementById("reasonDisplay").innerHTML = reason;
+            confetti({ particleCount: 50, spread: 60 });
+        }
+
+        // Countdown
+        const countDownDate = new Date("Feb 14, 2024 00:00:00").getTime();
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s to our magical day!";
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "It's Valentine's Day! Love is in the air! 💕";
+            }
+        }, 1000);
+
+        // Love Calculator
+        function calculateLove() {
+            const name1 = document.getElementById("name1").value;
+            const name2 = document.getElementById("name2").value;
+            const score = Math.floor(Math.random() * 100) + 1;
+            document.getElementById("result").innerHTML = `${name1} and ${name2}'s love score: ${score}% - Soulmates forever! 💑`;
+        }
+
+        // Heart-Clicking Game
+        let score = 0;
+        function clickHeart() {
+            score++;
+            document.getElementById("score").innerHTML = score;
+            alert("You clicked a heart! +1 Love Point! I love you more with every beat! 💖");
+        }
+
+        // Quiz
+        function quizAnswer(answer) {
+            if (answer === 'Pink') {
+                document.getElementById("quizResult").innerHTML = "Correct! You know me so well – our love is perfect! 🎉";
+                confetti();
+            } else {
+                document.getElementById("quizResult").innerHTML = "Try again! But I love you anyway! 😘";
+            }
+        }
+
+        // Virtual Kiss
+        function virtualKiss() {
+            alert("Mwah! A virtual kiss from Aditya to Puja – full of love! 💋❤️");
+            confetti({ particleCount: 100, spread: 70 });
+        }
+
+        // Bloom Rose
+        function bloomRose() {
+            const rose = document.getElementById("rose");
+            rose.classList.add("bloomed");
+            setTimeout(() => {
+                rose.classList.remove("bloomed");
+            }, 3000);
+        }
+
+        // Proposal with confirmation
+        function propose() {
+            const confirmed = confirm("Will you be my Valentine forever, Puja? 💍");
+            if (confirmed) {
+                // Yes clicked
+                confetti({ particleCount: 200, spread: 70 });
+                alert("Puja, I will never leave your side. I will always be with you, even if I sometimes overreact, but my loyalty is only for you. I will never abandon you like your father did. I love you forever! 💕");
+            } else {
+                // No clicked
+                alert("Plz Puja, tap on yes! I promise to make you the happiest! 😘");
+            }
+        }
+
+        // Floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+        setInterval(createHeart, 1000);
+
+        // Click hearts for message
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('heart')) {
+                alert('I love you more with every beat! 💕');
+            }
+        });
+
+        // Secret message on iframe click
+        document.getElementById('secretIframe').addEventListener('click', function() {
+            alert('Secret message: I love you, Aditya Puja!');
+        });
+    </script>
+</body>
+</html>

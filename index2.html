@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Puja ❤️ Aditya</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background: radial-gradient(circle at top,#1b0033,#000);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+h1{
+font-family:'Great Vibes',cursive;
+font-size:70px;
+color:#ff7ab6;
+margin-top:40px;
+}
+
+h2{
+color:#ff9bd3;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+padding:30px;
+margin:30px auto;
+max-width:850px;
+border-radius:20px;
+backdrop-filter:blur(12px);
+box-shadow:0 10px 40px rgba(0,0,0,0.5);
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#ff4b6e,#ff7ab6);
+color:white;
+cursor:pointer;
+font-size:16px;
+margin:5px;
+}
+
+button:hover{
+transform:scale(1.1);
+box-shadow:0 0 15px #ff7ab6;
+}
+
+.star{
+position:fixed;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+0%{opacity:0.3}
+50%{opacity:1}
+100%{opacity:0.3}
+}
+
+.lotus{
+position:fixed;
+top:-10px;
+font-size:28px;
+animation:fallLotus 6s linear;
+}
+
+@keyframes fallLotus{
+to{transform:translateY(100vh);}
+}
+
+.heart{
+position:fixed;
+top:-10px;
+font-size:22px;
+animation:fallHeart 5s linear;
+}
+
+@keyframes fallHeart{
+to{transform:translateY(100vh);}
+}
+
+#gameArea{
+width:400px;
+height:250px;
+background:#111;
+margin:auto;
+border-radius:15px;
+position:relative;
+overflow:hidden;
+}
+
+#target{
+position:absolute;
+font-size:40px;
+cursor:pointer;
+}
+
+#memory button{
+width:60px;
+height:60px;
+margin:5px;
+font-size:22px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Puja ❤️ Aditya</h1>
+
+<div class="card">
+<h2>Our Journey</h2>
+
+<p>
+It has been 37 beautiful days since we met on 4 February.
+Life sometimes brings people together in the most unexpected ways.
+Before meeting you everything was normal,
+but after you came into my life things started feeling more special.
+</p>
+
+<p>
+Your smile can make my day instantly better.
+Your voice brings calm even on stressful days.
+These small moments with you are very meaningful to me.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>A Message For You 💌</h2>
+
+<p>
+Puja,
+When we first met on 4 February,
+I never imagined that moment would become so important to me.
+Slowly our conversations became longer,
+our laughter became more frequent,
+and feelings started growing naturally.
+</p>
+
+<p>
+These 37 days have been amazing for me.
+I feel lucky to have someone like you in my life.
+</p>
+
+<p>
+— Aditya ❤️
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Something From My Heart ❤️</h2>
+
+<p>
+
+Puja,
+
+Today our relationship has completed one month.
+But when I think about us,
+I don't only think about one month.
+
+I think about the future.
+
+Life is not always easy,
+and I know you have faced many problems.
+I also know that you have gone through things
+that many people may never understand.
+
+But one thing I want you to always remember is this:
+
+You don't have to face life alone anymore.
+
+If you ever feel weak,
+if life ever becomes difficult,
+I want to stand beside you.
+
+Not just for today.
+Not just for one month.
+
+But for a long journey ahead.
+
+From this relationship…
+to many more years of memories.
+
+I want to grow with you,
+support you,
+and protect your happiness.
+
+Because when someone becomes important in your life,
+you start thinking about the future with them.
+
+And honestly,
+I want you to be part of my future.
+
+— Aditya ❤️
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Catch My Heart Game 🎮</h2>
+
+<div id="gameArea">
+<div id="target">❤️</div>
+</div>
+
+<p>Score: <span id="score">0</span></p>
+
+</div>
+
+<div class="card">
+
+<h2>Memory Love Game 💞</h2>
+
+<div id="memory"></div>
+
+</div>
+
+<div class="card">
+
+<h2>Relationship Quiz 🧠</h2>
+
+<p>Aditya Birthday?</p>
+
+<button onclick="check1('5aug')">5 August</button>
+<button onclick="check1('10oct')">10 October</button>
+
+<p id="q1"></p>
+
+<p>When did we meet?</p>
+
+<button onclick="check2('4feb')">4 February</button>
+<button onclick="check2('14feb')">14 February</button>
+
+<p id="q2"></p>
+
+<p>Puja favourite flower?</p>
+
+<button onclick="check3('lotus')">Lotus 🌸</button>
+<button onclick="check3('rose')">Rose 🌹</button>
+
+<p id="q3"></p>
+
+</div>
+
+<div class="card">
+
+<h2>Love Click Game ⚡</h2>
+
+<button onclick="clickLove()">Click Me ❤️</button>
+
+<p>Total Clicks: <span id="clickScore">0</span></p>
+
+</div>
+
+<div class="card">
+
+<h2>Grow Our Love 💞</h2>
+
+<button onclick="growLove()">Add Love</button>
+
+<div style="background:#333;width:300px;margin:auto;border-radius:10px">
+<div id="loveBar" style="height:20px;width:0;background:pink;border-radius:10px"></div>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Lucky Love 🍀</h2>
+
+<button onclick="luckyLove()">Try Your Luck</button>
+
+<p id="luckResult"></p>
+
+</div>
+
+<script>
+
+let score=0
+let target=document.getElementById("target")
+
+function moveTarget(){
+let x=Math.random()*350
+let y=Math.random()*200
+target.style.left=x+"px"
+target.style.top=y+"px"
+}
+
+target.onclick=function(){
+score++
+document.getElementById("score").innerHTML=score
+moveTarget()
+}
+
+moveTarget()
+
+function check1(a){
+if(a=="5aug"){
+document.getElementById("q1").innerHTML="Correct ❤️"
+}else{
+document.getElementById("q1").innerHTML="My birthday is 5 August"
+}
+}
+
+function check2(a){
+if(a=="4feb"){
+document.getElementById("q2").innerHTML="Correct ❤️"
+}else{
+document.getElementById("q2").innerHTML="We met on 4 February"
+}
+}
+
+function check3(a){
+if(a=="lotus"){
+document.getElementById("q3").innerHTML="Correct 🌸"
+}else{
+document.getElementById("q3").innerHTML="Her favourite flower is Lotus"
+}
+}
+
+let clickScore=0
+
+function clickLove(){
+clickScore++
+document.getElementById("clickScore").innerHTML=clickScore
+}
+
+let loveLevel=0
+
+function growLove(){
+loveLevel+=10
+document.getElementById("loveBar").style.width=loveLevel+"%"
+}
+
+function luckyLove(){
+
+let r=Math.random()
+
+if(r>0.5){
+document.getElementById("luckResult").innerHTML="You found extra love today ❤️"
+}else{
+document.getElementById("luckResult").innerHTML="Try again 😄"
+}
+
+}
+
+function createStars(){
+for(let i=0;i<120;i++){
+let star=document.createElement("div")
+star.className="star"
+star.style.left=Math.random()*100+"vw"
+star.style.top=Math.random()*100+"vh"
+document.body.appendChild(star)
+}
+}
+
+createStars()
+
+function lotusRain(){
+let l=document.createElement("div")
+l.className="lotus"
+l.innerHTML="🌸"
+l.style.left=Math.random()*100+"vw"
+document.body.appendChild(l)
+setTimeout(()=>l.remove(),6000)
+}
+
+setInterval(lotusRain,1200)
+
+function heartRain(){
+let h=document.createElement("div")
+h.className="heart"
+h.innerHTML="❤️"
+h.style.left=Math.random()*100+"vw"
+document.body.appendChild(h)
+setTimeout(()=>h.remove(),5000)
+}
+
+setInterval(heartRain,900)
+
+const symbols=["❤️","🌸","💖","💕","❤️","🌸","💖","💕"]
+symbols.sort(()=>0.5-Math.random())
+
+let first=null
+
+symbols.forEach(sym=>{
+
+let btn=document.createElement("button")
+btn.innerHTML="?"
+
+btn.onclick=function(){
+
+btn.innerHTML=sym
+
+if(!first){
+first=btn
+}else{
+
+if(first.innerHTML==btn.innerHTML){
+alert("Match ❤️")
+}else{
+setTimeout(()=>{
+btn.innerHTML="?"
+first.innerHTML="?"
+},700)
+}
+
+first=null
+
+}
+
+}
+
+document.getElementById("memory").appendChild(btn)
+
+})
+
+</script>
+
+</body>
+</html>
